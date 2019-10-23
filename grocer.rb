@@ -36,7 +36,7 @@ end
 
 def checkout(cart, coupons)
   new_cart = consolidate_cart(cart)
-  couponed_cart = apply_coupons(new_cart)
+  couponed_cart = apply_coupons(new_cart, coupons)
   cleared_cart = apply_clearance(couponed_cart)
   total = cleared_cart.reduce(0){|memo, (k, v)| memo += v[:price] * v[:count]}
   if total > 100
