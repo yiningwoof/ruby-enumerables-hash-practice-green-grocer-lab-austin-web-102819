@@ -38,5 +38,5 @@ def checkout(cart, coupons)
   new_cart = consolidate_cart(cart)
   couponed_cart = apply_coupons(new_cart)
   cleared_cart = apply_clearance(couponed_cart)
-  total = cleared_cart.reduce
+  total = cleared_cart.reduce(0){|k, v|
 end
